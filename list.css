@@ -1,0 +1,108 @@
+/* Reset body margin and set a default font */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #ebebeb;
+  border-radius: 100px;
+}
+
+button {
+  border-radius: 10px;
+  font-family: Arial;
+  font-weight: bold;
+  color: #242324;
+  font-size: 13px;
+  padding: 10px 20px 10px 20px;
+  border: solid #d9d9d9 2px;
+  justify-content: space-between;
+}
+
+/* The sticky navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  height: 60px;
+}
+/* Logo styling */
+.navbar .logo {
+  color: #000000;
+  font-size: 1.5em;
+  text-decoration: none;
+}
+/* Navigation links styling */
+.navbar .nav-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.navbar .nav-links li {
+  margin: 0 15px;
+}
+.navbar .nav-links li a {
+  color: #000000;
+  text-decoration: none;
+  padding: 10px;
+}
+.navbar .nav-links li a:hover {
+  background-color: #ebebeb;
+  border-radius: 100px;
+}
+/* Profile image and dropdown container */
+.navbar .profile {
+  position: relative;
+  display: inline-block;
+}
+.navbar .profile .profile-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+/* Dropdown menu styling */
+.navbar .profile .dropdown {
+  display: none; /* Hidden by default */
+  position: absolute;
+  right: 0;
+  background-color: #fff;
+  min-width: 150px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  overflow: hidden;
+  z-index: 1;
+}
+.navbar .profile .dropdown a {
+  color: #333;
+  padding: 10px 15px;
+  text-decoration: none;
+  display: block;
+}
+.navbar .profile .dropdown a:hover {
+  background-color: #f1f1f1;
+}
+
+.source {
+  padding: 100px 100px 80px 150px;
+}
+
+.search {
+  float: right;
+  width: 350px;
+  padding: 12px 20px;
+  border: 2px solid #ccc;
+  border-radius: 25px;
+  font-size: 16px;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.search:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.3);
+}

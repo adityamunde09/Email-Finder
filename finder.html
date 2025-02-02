@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Email Finder</title>
+    <link rel="stylesheet" href="./finder.css" />
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <a href="#" class="logo">📩 mail</a>
+      <ul class="nav-links">
+        <li><a href="#">☰ List</a></li>
+        <li><a href="#">☑ Single</a></li>
+        <li><a href="#">🌐 API</a></li>
+        <li><a href="#">🔎 Finder</a></li>
+      </ul>
+      <div class="profile">
+        <img
+          src="./profile.jpg"
+          alt="Profile"
+          class="profile-img"
+          id="profileImg"
+        />
+        <div class="dropdown" id="dropdownMenu">
+          <a href="#">Settings</a>
+          <a href="#">Reports</a>
+          <a href="#">Referrals</a>
+          <a href="#">Integration</a>
+          <a href="#">Support</a>
+          <a href="#">API Doc</a>
+          <a href="#">Logout</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page content -->
+    <div style="padding: 20px 100px 0px 150px">
+      <h2>🔍 Email Finder</h2>
+      <p>The Email Finder lets you find emails from people and companies.</p>
+
+      <!-- Search Mode Buttons -->
+      <div class="search-mode">
+        <button
+          class="search-btn"
+          id="peopleBtn"
+          onclick="setSearchMode('people')"
+        >
+          People
+        </button>
+        <button
+          class="search-btn"
+          id="companyBtn"
+          onclick="setSearchMode('company')"
+        >
+          Company
+        </button>
+      </div>
+
+      <!-- Search Fields -->
+      <div id="searchContainer">
+        <input
+          id="nameInput"
+          type="text"
+          placeholder="Full Name"
+          class="search"
+        />
+        <input
+          id="companyInput"
+          type="text"
+          placeholder="Company.com"
+          class="search"
+        />
+        <button class="validate-btn" onclick="validateSearch()">
+          Validate →
+        </button>
+      </div>
+      <p>Not inspired? Try it with <a href="#">Tim Cook from Apple</a></p>
+    </div>
+
+    <script>
+      const profileImg = document.getElementById("profileImg");
+      const dropdownMenu = document.getElementById("dropdownMenu");
+      const nameInput = document.getElementById("nameInput");
+      const companyInput = document.getElementById("companyInput");
+
+      // Toggle dropdown
+      profileImg.addEventListener("click", function (event) {
+        event.stopPropagation();
+        dropdownMenu.style.display =
+          dropdownMenu.style.display === "block" ? "none" : "block";
+      });
+      document.addEventListener("click", function () {
+        dropdownMenu.style.display = "none";
+      });
+
+      // Search Mode Toggle
+      function setSearchMode(mode) {
+        if (mode === "people") {
+          nameInput.style.display = "block";
+          companyInput.style.display = "block";
+        } else if (mode === "company") {
+          nameInput.style.display = "none";
+          companyInput.style.display = "block";
+        }
+      }
+
+      // Default to people search
+      setSearchMode("people");
+    </script>
+  </body>
+</html>

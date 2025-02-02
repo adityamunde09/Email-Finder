@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Email</title>
+    <link rel="stylesheet" href="./api.css" />
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <!-- Left Side: Logo -->
+      <a href="#" class="logo">📩 mail</a>
+
+      <!-- Middle: Navigation Tabs -->
+      <ul class="nav-links">
+        <li><a href="#">☰ List</a></li>
+        <li><a href="#">☑ Single</a></li>
+        <li><a href="#">🌐 API</a></li>
+        <li><a href="#">🔎 Finder</a></li>
+      </ul>
+
+      <!-- Right Side: Profile with Dropdown -->
+      <div class="profile">
+        <img
+          src="./profile.jpg"
+          alt="Profile"
+          class="profile-img"
+          id="profileImg"
+        />
+        <div class="dropdown" id="dropdownMenu">
+          <a href="#">Settings</a>
+          <a href="#">Reports</a>
+          <a href="#">Referrals</a>
+          <a href="#">Integration</a>
+          <a href="#">Support</a>
+          <a href="#">API Doc</a>
+          <a href="#">Logout</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page content to demonstrate sticky behavior -->
+    <div class="page">
+      <h1>🔗</h1>
+      <h2>Get started with the API Integration</h2>
+      <p>Generate an API key and get started with one of our code examples.</p>
+      <button class="get-started-btn" onclick="GetStarted()">
+        Get Started →
+      </button>
+    </div>
+
+    <script>
+      // Get references to the profile image and dropdown menu elements
+      const profileImg = document.getElementById("profileImg");
+      const dropdownMenu = document.getElementById("dropdownMenu");
+
+      // Toggle the dropdown display when the profile image is clicked
+      profileImg.addEventListener("click", function (event) {
+        event.stopPropagation(); // Prevent the click from propagating to the document
+        dropdownMenu.style.display =
+          dropdownMenu.style.display === "block" ? "none" : "block";
+      });
+
+      // Hide the dropdown if clicking anywhere else on the document
+      document.addEventListener("click", function () {
+        dropdownMenu.style.display = "none";
+      });
+    </script>
+  </body>
+</html>
